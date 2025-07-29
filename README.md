@@ -1,14 +1,36 @@
-# SWFL Housing Market (2020-Present)
+# SWFL Housing Market (2020–Present)
 
-## Data Collection:
-www.redfin.com 
+Data‑driven dashboard tracking residential real‑estate trends across Southwest Florida (Bradenton ➜ Everglades City) from Jan 2020 onward. Powered by Redfin data, Python 3.10, and Streamlit.
 
-## Methodology 
-SWFL Past 5 Years (Brandenton -> Everglades City)
+## Goals
+- Measure COVID‑era housing shifts  
+- Map & compare price hot‑spots  
+- 12‑month SARIMA price forecast  
+- Scalable pipeline for statewide → national roll‑out  
 
-## Further Implications
-Expand throughout the state, then throughout the country. 
+## Data
+- **Source:** Redfin listings (scraped)  
+- **Range:** 2020‑01‑01 → today  
+- **Counties:** Manatee, Sarasota, Charlotte, Lee, Collier  
+- **File:** `data/cleaned_redfin_data.csv`  
 
-Compare residential real estate to commercial. 
+## Method
+1. Scrape & clean (Selenium + pandas)  
+2. EDA & visuals (matplotlib / seaborn)  
+3. Geo‑clusters (k‑means)  
+4. SARIMA forecast (statsmodels)  
+5. Option‑style valuation (QuantLib)  
+6. Streamlit UI  
 
---- TBD...
+## Visualizations
+- Interactive EDA maps that are clusters like the other SWFL project
+- 12 month forecast
+- Option Pricing Module
+
+## Quick Start
+```bash
+git clone https://github.com/Chris-D-Jose-Castaneda/SWFL_Analysis_V2.git
+cd SWFL_Analysis_V2
+conda create -n swfl python=3.10 -y && conda activate swfl
+pip install -r requirements.txt
+streamlit run app.py
